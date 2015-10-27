@@ -7,9 +7,12 @@ and a batch file to run it and a shortcut for the batch file.
 
 For 3 device simulators, Camera, E-Board, GateBar, it includes similar files for each device type.
 
-Please use these files your benefit and give us a feedback, please.
+Please use these files for your benefit and give us any kind of feedback, please.
 
 Dr. Park Jongbum (CEO)
+
 jbpark03@gmail.com
+
 Open Source Parking Inc.
+
 www.osparking.com
