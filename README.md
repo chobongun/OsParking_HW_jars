@@ -18,3 +18,42 @@ jbpark03@gmail.com
 Open Source Parking Inc.
 
 www.osparking.com
+
+OsParking How to -- install & run Simulation Package
+
+1. Install Java (recommended version: jre1.8.0_40 or later)
+2. Install MySQL (recommended version: 5.6.24 MySQL Community Server (GPL))
+3. Create ‘parkinglot’ MySQL database using the following MySQL command-bold face characters are the strings that should be entered:
+
+C:\> mysql  -uroot  -p
+Enter password: ****
+Welcome to the MySQL monitor. ……
+……
+mysql> create  database  parkinglot;
+mysql> exit
+
+4. From Github(github.com), download “parkinglot-db” and “ospa_jars” repositories.
+
+5. Load “parkinglot” database with tables using “parkinglot_Eng.sql”(found in parkinglot-db) and the database recovery command shown below:
+
+C:\> mysql  -uroot  -p  parkinglot  <  parkinglot_Eng.sql
+Enter password: ****
+
+6. Create ‘gate_1’ user account on the MySQL monitor as shown below-where 1234 is the password of user gate_1:
+
+C:\> mysql  -uroot  -p
+Enter password: ****
+Welcome to the MySQL monitor. ……
+……
+mysql> grant select,insert,update,delete,create,drop on parkinglot.*
+        -> to ‘gate_1’@’localhost’ identified by ‘1234’;
+Query OK, ……
+mysql> exit
+
+Now you should be able to simulate a OsParking lot using “ospa_jars” repository you downloaded from github.com and following the steps explained in the featured YouTube video clips --
+
+OsParking Introduction Part 1
+https://youtu.be/gog2-Rr4aZo (run time 6:27)
+
+OsParking Introduction Part 2
+https://youtu.be/Gq4MG6S3ShQ (run time 9:08)
