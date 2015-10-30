@@ -1,6 +1,7 @@
 # ospa_jars
 
-Programs in this package needs "parkinglot_db" package, too.
+Programs in this package needs "parkinglot-db" repository.
+
 This package includes jar files producable from the osparking/Release repository.  In detail, this repository includes, for the OsParking parking lot mamagement program,
 
 OSParking-1.0.1-jar-with-dependencies.jar
