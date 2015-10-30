@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=euc-kr">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.1  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="종범 박">
+	<META NAME="CHANGED" CONTENT="20151029;23450400">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2.54cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; font-family: "Arial", sans-serif; font-size: 11pt; font-style: normal; font-weight: normal; line-height: 115%; text-align: left; widows: 2; orphans: 2; text-decoration: none; page-break-before: auto; page-break-after: auto }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<FONT SIZE=4><U><B>OsParking How to</B></U></FONT><FONT SIZE=4><B> --
+install &amp; run </B></FONT><FONT SIZE=4><B>Simulation Package</B></FONT></P>
+<P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<BR>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	Install Java (recommended version: jre1.8.0_40 or later)</P>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	Install MySQL (recommended version: 5.6.24 MySQL Community Server
+	(GPL))</P>
+	<LI><P STYLE="margin-bottom: 0cm">Create &lsquo;parkinglot&rsquo;
+	MySQL database using the following MySQL command-bold face
+	characters are the strings that should be entered:<BR><BR><FONT FACE="Consolas, monospace">C:\&gt;
+	</FONT><FONT FACE="Consolas, monospace"><B>mysql  -uroot  -p</B></FONT><BR><FONT FACE="Consolas, monospace">Enter
+	password: </FONT><FONT FACE="Consolas, monospace"><B>****</B></FONT><FONT FACE="Consolas, monospace"><BR>Welcome
+	to the MySQL monitor. &hellip;&hellip;</FONT><BR><FONT FACE="Consolas, monospace">&hellip;&hellip;</FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Consolas, monospace">mysql&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>create  database 
+	parkinglot;</B></FONT><B><BR></B><FONT FACE="Consolas, monospace">mysql&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>exit</B></FONT></P>
+</OL>
+<P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<BR>
+</P>
+<OL START=4>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	From Github(<A HREF="https://github.com/">github</A><A HREF="https://github.com/">.</A><A HREF="https://github.com/">com</A>),
+	download &ldquo;parkinglot-db&rdquo; and &ldquo;ospa_jars&rdquo;
+	repositories.<BR><BR>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Load &ldquo;parkinglot&rdquo;
+	database with tables using &ldquo;parkinglot_Eng.sql&rdquo;(found in
+	parkinglot-db) and the database recovery command shown below:<BR><BR><FONT FACE="Consolas, monospace">C:\&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>mysql  -uroot  -p  parkinglot  &lt;
+	 parkinglot_Eng.sql</B></FONT><BR>Enter password: <B>****<BR></B><BR>
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Create &lsquo;gate_1&rsquo; user
+	account on the MySQL monitor as shown below-where 1234 is the
+	password of user gate_1:<BR><BR><FONT FACE="Consolas, monospace">C:\&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>mysql  -uroot  -p</B></FONT><BR><FONT FACE="Consolas, monospace">Enter
+	password: </FONT><FONT FACE="Consolas, monospace"><B>****</B></FONT><FONT FACE="Consolas, monospace"><BR>Welcome
+	to the MySQL monitor. &hellip;&hellip;</FONT><BR><FONT FACE="Consolas, monospace">&hellip;&hellip;</FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Consolas, monospace">mysql&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>grant
+	select,insert,update,delete,create,drop on parkinglot.*</B></FONT><B><BR>
+	 </B>      <FONT FACE="Consolas, monospace">-&gt;</FONT><B> </B><FONT FACE="Consolas, monospace"><B>to
+	&lsquo;gate_1&rsquo;@&rsquo;localhost&rsquo; identified by
+	&lsquo;1234&rsquo;;</B></FONT><B><BR></B><FONT FACE="Consolas, monospace">Query
+	OK, &hellip;&hellip;</FONT><FONT FACE="Consolas, monospace"><B><BR></B></FONT><FONT FACE="Consolas, monospace">mysql&gt;</FONT>
+	<FONT FACE="Consolas, monospace"><B>exit</B></FONT><BR><BR>
+	</P>
+</OL>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	Now you should be able to simulate a OsParking lot <U>using</U>
+	&ldquo;ospa_jars&rdquo; repository you downloaded from <A HREF="https://github.com/">github</A><A HREF="https://github.com/">.</A><A HREF="https://github.com/">com</A>
+	and <U>following</U> the steps explained in the featured YouTube
+	video clips --<BR><BR>
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm; line-height: 115%"><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">OsParking
+		Introduction Part 1<BR></SPAN></FONT><A HREF="https://youtu.be/gog2-Rr4aZo">https</A><A HREF="https://youtu.be/gog2-Rr4aZo">://</A><A HREF="https://youtu.be/gog2-Rr4aZo">youtu</A><A HREF="https://youtu.be/gog2-Rr4aZo">.</A><A HREF="https://youtu.be/gog2-Rr4aZo">be</A><A HREF="https://youtu.be/gog2-Rr4aZo">/</A><A HREF="https://youtu.be/gog2-Rr4aZo">gog</A><A HREF="https://youtu.be/gog2-Rr4aZo">2-</A><A HREF="https://youtu.be/gog2-Rr4aZo">Rr</A><A HREF="https://youtu.be/gog2-Rr4aZo">4</A><A HREF="https://youtu.be/gog2-Rr4aZo">aZo</A><A HREF="https://youtu.be/gog2-Rr4aZo">
+		(</A><A HREF="https://youtu.be/gog2-Rr4aZo">run</A><A HREF="https://youtu.be/gog2-Rr4aZo">
+		</A><A HREF="https://youtu.be/gog2-Rr4aZo">time</A><A HREF="https://youtu.be/gog2-Rr4aZo">
+		6:27)</A></P>
+	</UL>
+</UL>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<BR>
+</P>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">OsParking</SPAN></FONT><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">
+		</SPAN></FONT><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">Introduction</SPAN></FONT><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">
+		</SPAN></FONT><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">Part</SPAN></FONT><FONT COLOR="#222222"><SPAN STYLE="background: #ffffff">
+		2<BR></SPAN></FONT><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">https</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">://</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">youtu</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">.</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">be</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">/</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">Gq</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">4</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">MG</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">6</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">S</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">3</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">ShQ</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">
+		(</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">run</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">
+		</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">time</SPAN></U></FONT></A><A HREF="https://youtu.be/Gq4MG6S3ShQ"><FONT COLOR="#1155cc"><U><SPAN STYLE="background: #ffffff">
+		9:08)</SPAN></U></FONT></A></P>
+	</UL>
+</UL>
+<P STYLE="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<BR>
+</P>
+</BODY>
+</HTML>
