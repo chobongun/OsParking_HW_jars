@@ -1,5 +1,5 @@
 # ospa_jars
-OsParking Package jar files-needs Parkinglog-db 
+OsParking Package jar files-needs Parkinglog-db(another repository of OsParking)
 
 This package contains 4 jar files that constitute a OsParking simulation package.
 
