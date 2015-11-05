@@ -1,4 +1,8 @@
 # ospa_jars
+*** Notice: Release repository has been changed to a private one due to a license conflict 
+
+*** Please give us some time until we finish removing conflict and modifying license level.
+
 OsParking Package jar files-needs Parkinglog-db(another repository of OsParking)
 
 This package contains 4 jar files that constitute a OsParking simulation package.
