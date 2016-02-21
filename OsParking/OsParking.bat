@@ -1,2 +1,2 @@
-start /high /B javaw -Xmx260m -Xms120m -Xmn180m -XX:+UseConcMarkSweepGC -XX:ParallelCMSThreads=2 -Dsun.java2d.d3d=false -jar OSParking-1.2.1-jar-with-dependencies.jar -version:release -random_attendan
+start /high /B javaw -Xmx260m -Xms120m -Xmn180m -XX:+UseConcMarkSweepGC -XX:ParallelCMSThreads=2 -Dsun.java2d.d3d=false -jar OSParking-2.0.1-jar-with-dependencies.jar -version:release -random_attendan
 exit
